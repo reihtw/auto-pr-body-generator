@@ -27,6 +27,7 @@ jobs:
         uses: jbrocher/auto-pr-body-generator@v0.2.2
         with:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: 'gpt-4-turbo'  #  example
 ```
 
 ### Trigger
@@ -59,6 +60,7 @@ This action relies on Openai to generate the body, and as such needs an active o
     uses: jbrocher/auto-pr-body-generator@v0.1.0
     with:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_API_KEY: 'gpt-4-turbo'  #  example
 ```
 
 

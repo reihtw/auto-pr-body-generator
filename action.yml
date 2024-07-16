@@ -1,5 +1,5 @@
 # action.yml
-name: 'AI powered Automatic PR Body Generation'
+name: 'AI powered Automatic PR Body Generation AI Model'
 description: 'Automatically generates a PR body based on the PR content using openai'
 branding:
   icon: 'git-pull-request'
@@ -7,6 +7,9 @@ branding:
 inputs:
   OPENAI_API_KEY:  # id of input
     required: true
+  OPENAI_MODEL:
+    required: false
+    default: 'gpt-3.5-turbo'
 runs:
   using: "composite"
   steps:
@@ -25,6 +28,7 @@ runs:
       shell: bash
       env: 
         OPENAI_API_KEY: ${{inputs.OPENAI_API_KEY}}
+        OPENAI_MODEL: ${{inputs.OPENAI_MODEL}}
     - run: gh pr edit ${{ github.head_ref }} -F pr_body.txt
       env:
         GITHUB_TOKEN: ${{ github.token }}
