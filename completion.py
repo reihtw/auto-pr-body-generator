@@ -29,8 +29,9 @@ class Completion:
         return self._state
 
     def _complete_prompt(self) -> str:
+        model = os.getenv('OPENAI_MODEL') or 'gpt-3.5-turbo'
         response = self._openai_client.Completion.create(
-            model="text-davinci-003", prompt=self._prompt.text, max_tokens=1024
+            model=model, prompt=self._prompt.text, max_tokens=1024
         )
         return response.choices[0].text
 
