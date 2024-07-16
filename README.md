@@ -2,6 +2,8 @@
 
 This github action automatically generates the body of a pull request by summarizing the changes made in the code diff. The action requires an OpenAI account to work and the input variable `OPENAI_API_KEY` must be set with [an openai API key](https://platform.openai.com/account/api-keys).
 
+The `OPEN_MODEL` variable isn't required. If it isn't passed, it will use gpt-3.5-turbo by default.
+
 ## Usage
 
 Here's an example workflow that uses this action. Detailed explanation are given in the following sections 
@@ -27,7 +29,7 @@ jobs:
         uses: reihtw/auto-pr-body-generator@v0.2.4
         with:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_API_KEY: 'gpt-4-turbo'  #  example
+          OPENAI_MODEL: 'gpt-4-turbo'  #  example
 ```
 
 ### Trigger
@@ -60,7 +62,7 @@ This action relies on Openai to generate the body, and as such needs an active o
     uses: reihtw/auto-pr-body-generator@v0.2.4
     with:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_API_KEY: 'gpt-4-turbo'  #  example
+      OPENAI_MODEL: 'gpt-4-turbo'  #  example
 ```
 
 

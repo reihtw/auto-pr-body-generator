@@ -1,5 +1,5 @@
 # action.yml
-name: 'AI powered Automatic PR Body Generation AI Model'
+name: 'AI powered Automatic PR Body Generation AI Model - Reihtw Version'
 description: 'Automatically generates a PR body based on the PR content using openai'
 branding:
   icon: 'git-pull-request'
