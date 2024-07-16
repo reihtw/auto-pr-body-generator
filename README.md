@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: AI powerd Automatic PR Body Generation
-        uses: jbrocher/auto-pr-body-generator@v0.2.2
+        uses: reihtw/auto-pr-body-generator@v0.2.4
         with:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_API_KEY: 'gpt-4-turbo'  #  example
@@ -57,7 +57,7 @@ This action relies on Openai to generate the body, and as such needs an active o
 
 ```yaml
   - name: Auto-PR-Body Generator
-    uses: jbrocher/auto-pr-body-generator@v0.1.0
+    uses: reihtw/auto-pr-body-generator@v0.2.4
     with:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_API_KEY: 'gpt-4-turbo'  #  example
